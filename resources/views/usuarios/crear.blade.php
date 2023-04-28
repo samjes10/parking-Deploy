@@ -23,11 +23,12 @@
                         @endif
 
                         
-                        {!! Form::open(array('route' => 'usuarios.store','method'=>'POST')) !!}
+                        {!! Form::open(array('route' => 'usuarios.store','method'=>'POST','enctype'=>'multipart/form-data')) !!}
+                        
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <label for="name">Nombre</label>
+                                    <label for="name">Nombre Completo</label>
                                     {!! Form::text('name', null, array('class' => 'form-control')) !!}
                                 </div>
                             </div>
@@ -35,6 +36,12 @@
                                 <div class="form-group">
                                     <label for="email">E-mail</label>
                                     {!! Form::text('email', null, array('class' => 'form-control')) !!}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                   <label for="">CI </label>
+                                   <input type="number" name="carnet" id="carnet" class="form-control" value="value">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -55,6 +62,20 @@
                                     {!! Form::select('roles[]', $roles,[], array('class' => 'form-control')) !!}
                                 </div>
                             </div>
+                            <!-- Para ver la imagen seleccionada, de lo contrario no se -->
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <img id="imagenSeleccionada" style="max-height: 150px;">           
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                               <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold mb-1">Subir Imagen</label>
+                              <div class='flex items-center justify-center w-full'>
+                                <label >
+                            
+                                  <input name="imagen" id="imagen" type='file' class="hidden" />
+                               </label>
+                              </div>
+                            </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
                             </div>
@@ -67,5 +88,18 @@
             </div>
         </div>
     </section>
+<!-- Script para ver la imagen antes de CREAR UN NUEVO PRODUCTO -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+<script>   
+    $(document).ready(function (e) {   
+        $('#imagen').change(function(){            
+            let reader = new FileReader();
+            reader.onload = (e) => { 
+                $('#imagenSeleccionada').attr('src', e.target.result); 
+            }
+            reader.readAsDataURL(this.files[0]); 
+        });
+    });
+</script>
 @endsection
 

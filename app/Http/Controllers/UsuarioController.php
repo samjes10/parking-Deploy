@@ -57,18 +57,28 @@ class UsuarioController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email|unique:users,email',           
+            'carnet' => 'required',
             'password' => 'required|same:confirm-password',
-            'roles' => 'required'
+            'roles' => 'required', 
+            'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024'
         ]);
     
         $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
+        $input['password'] = Hash::make($input['password']); 
+        if($imagen = $request->file('imagen')) {
+            $rutaGuardarImg = 'imagen/';
+            $imagenUser = date('YmdHis'). "." . $imagen->getClientOriginalExtension();
+            $imagen->move($rutaGuardarImg, $imagenUser);
+            $input['imagen'] = "$imagenUser";             
+        }      
     
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
+        
     
         return redirect()->route('usuarios.index');
+        
     }
 
     /**

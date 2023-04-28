@@ -20,6 +20,7 @@ class SuperAdminSeeder extends Seeder
         $usuario = User::create([
             'name' => 'Ana Lopez',
             'email' => 'admin123@gmail.com',
+            'carnet' => '8765432',
             'password' => bcrypt('12345678')
         ]);
 
