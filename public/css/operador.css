@@ -1,0 +1,34 @@
+
+.btn-outline-primary{
+    width: max-content;
+    margin-right: 2%;
+}
+
+.btn-outline-success{
+    width: max-content;
+}
+
+.lista-espacios{
+    background-color: azure;
+    width: max-content;
+}
+
+.lista-lientes{
+    background-color: azure;
+    width: max-content;
+    margin-right: 3%;
+}
+
+.asignacion{
+    display: flex;
+}
+
+.sorteo{
+    margin-right: 3%;
+    margin-top: 7%;
+}
+
+.table{
+    width: max-content;
+    height: max-content;
+}

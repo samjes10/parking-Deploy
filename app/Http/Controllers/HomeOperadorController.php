@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Espacio;
 use Illuminate\Http\Request;
 
-class EspacioController extends Controller
+class HomeOperadorController extends Controller
 {
-    //
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $espacios = Espacio::All();
-        return view('parqueo.index', compact('parqueos'));
+        //
+        return view('operador.home');
     }
 
     /**
@@ -21,7 +24,7 @@ class EspacioController extends Controller
      */
     public function create()
     {
-        return view('parqueo.crear');
+        //
     }
 
     /**
@@ -33,15 +36,6 @@ class EspacioController extends Controller
     public function store(Request $request)
     {
         //
-        
-        $espacio = new Espacio();
-        $espacio->codigo = $request->codigo;
-        $espacio->descripcion = $request->descripcion;
-        $espacio->estado = $request->estado;
-        
-        $espacio->save();
-
-        return response()->json(['mensaje'=>'Espacios de parqueo guardados correctamente']);
     }
 
     /**

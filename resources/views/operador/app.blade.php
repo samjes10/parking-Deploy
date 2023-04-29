@@ -34,7 +34,7 @@
 
         </nav>
         <div class="main-sidebar main-sidebar-postion">
-            @include('layouts.sidebar')
+            @include('operador.sidebar')
         </div>
         <!-- Main Content -->
         <div class="main-content">
