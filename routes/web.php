@@ -9,6 +9,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ParqueoController;
 use App\Http\Controllers\OperadorController;
 use App\Http\Controllers\PagoController;
+use App\Http\Controllers\EspacioController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -41,7 +42,7 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 Route::resource('parqueos', ParqueoController::class);
-Route::resource('espacios', EspaciosController::class);
+Route::resource('espacios', EspacioController::class);
 Route::resource('operador', OperadorController::class);
 Route::resource('pagos', PagoController::class);
 Route::post('/procesar-pago', [PagoController::class, 'procesarPago'])->name('procesar_pago');

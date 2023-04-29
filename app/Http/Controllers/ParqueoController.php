@@ -19,7 +19,7 @@ class ParqueoController extends Controller
     public function index()
     {
         $parqueos = Parqueo::All();
-        return view('parqueo.index', compact('parqueos'));
+        return view('parqueos.index', compact('parqueos'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ParqueoController extends Controller
      */
     public function create()
     {
-        return view('parqueo.crear');
+        return view('parqueos.crear');
     }
 
     /**

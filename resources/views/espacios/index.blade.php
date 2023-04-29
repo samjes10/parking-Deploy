@@ -1,4 +1,4 @@
-@extends('operador.app')
+@extends('layouts.app')
 
 <link rel="stylesheet" href="{{ asset('/css/operador.css') }}">
 @section('content')
@@ -12,8 +12,8 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="col-button">
-                                <a type="button" href="{{ route('operador.create') }}" class="btn btn-outline-primary">Asignacion manual</a>
-                                <a type="button" href="{{ route('operador.create') }}" class="btn btn-outline-success">Asignacion aleatoria</a>
+                                <a type="button" href="{{ route('espacios.create') }}" class="btn btn-outline-primary">Asignacion manual</a>
+                                <a type="button" href="{{ route('espacios.create') }}" class="btn btn-outline-success">Asignacion aleatoria</a>
                             </div>
                             
                         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Espacio;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EspacioController extends Controller
@@ -10,8 +11,9 @@ class EspacioController extends Controller
     //
     public function index()
     {
+        $usuarios = User::all() ?? null;
         $espacios = Espacio::All();
-        return view('parqueo.index', compact('parqueos'));
+        return view('espacios.index', compact('usuarios', 'espacios'));
     }
 
     /**
@@ -21,7 +23,14 @@ class EspacioController extends Controller
      */
     public function create()
     {
-        return view('parqueo.crear');
+        $usuarios = User::all() ?? null;
+        $espacios = Espacio::All();
+        
+        if (count($usuarios) < count($espacios)) {
+            return view('espacios.asignacion_manual', compact('usuarios', 'espacios'));
+        } else {
+            return view('espacios.asignacion_aleatorio', compact('usuarios', 'espacios'));
+        }
     }
 
     /**
