@@ -1,0 +1,26 @@
+.card-parqueos {
+    background-image: url("/img/fondoCars2.gif");
+    background-position: center;
+    background-color: rgba(20, 2, 2, 0.20);
+    background-size:cover;
+    color: white;
+    margin-top: 3%;
+    
+    /*width: max-content;*/
+  }
+
+.menu-action{
+    display:flex;
+    text-align: center;
+    justify-content:flex-end;
+    margin-left: 30%;
+    /*width: max-content;*/
+    
+}
+
+.card-header{
+    display: flex;
+    margin-right: 15%;
+    /*width: max-content;*/
+}
+

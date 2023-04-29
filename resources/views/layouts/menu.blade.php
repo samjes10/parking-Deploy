@@ -9,8 +9,15 @@
         <i class=" fas fa-user-lock"></i><span>Roles</span>
     </a>
     <a class="nav-link" href="/parqueos">
-        <i class=" fas fa-parqueo"></i><span>Parqueo</span>
+        <i class="fa-solid fa-square-parking"></i><span>Parqueos</span>
     </a>
+    <a class="nav-link" href="/espacios">
+        <i class="fa-solid fa-square-parking"></i><span>Asignacion de sitios</span>
+    </a>
+    <a class="nav-link" href="/pagos">
+        <i class="fa-solid fa-square-parking"></i><span>Pagos</span>
+    </a>
+    
     <!-- <a class="nav-link" href="/blogs">
         <i class=" fas fa-blog"></i><span>Blogs</span>
     </a> -->

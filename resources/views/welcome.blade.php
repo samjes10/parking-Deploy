@@ -17,20 +17,20 @@
 
         <style>
             body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("/imag/fondoCars4.jpg"); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Ajusta el tamaño de la imagen para que cubra todo el body */
-    background-position: absolute; /* Centra la imagen en el body */
-    background-repeat: no-repeat; /* Evita la repetición de la imagen */
-    /* Otros estilos opcionales de fondo */
-    background-attachment: fixed;
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    padding-top: 70px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("/imag/fondoCars4.jpg"); /* Ruta de la imagen de fondo */
+            background-size: cover; /* Ajusta el tamaño de la imagen para que cubra todo el body */
+            background-position: absolute; /* Centra la imagen en el body */
+            background-repeat: no-repeat; /* Evita la repetición de la imagen */
+            /* Otros estilos opcionales de fondo */
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            padding-top: 70px;
 
-    /* background-blur: 5px; // Agrega un efecto de desenfoque a la imagen de fondo */
-  }
+            /* background-blur: 5px; // Agrega un efecto de desenfoque a la imagen de fondo */
+        }
         </style>
 
     </head>

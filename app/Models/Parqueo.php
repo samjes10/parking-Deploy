@@ -9,6 +9,11 @@ class Parqueo extends Model
 {
     use HasFactory;
 
-    protected $table = 'parqueos';
-    protected $fillable = 'nombre';
+    protected $fillable = ['nombre', 'descripcion','estado','filas','columnas','cantidadEspacios'];
+
+
+    public function espacios()
+    {
+        return $this->hasMany(Espacio::class);
+    }
 }
