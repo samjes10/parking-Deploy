@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('paginaInicio');
+    return view('paginaInicio2');
 });
 
 Auth::routes();

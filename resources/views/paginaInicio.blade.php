@@ -10,6 +10,7 @@
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
@@ -51,20 +52,7 @@
         
       </ul>
       <form class="d-flex navbar-expand-bg d-flex inicioSesion" role="search">
-        @if (Route::has('login'))
-                <div class="">
-                    @auth
-                        <a href="{{ url('/home') }}" class="btn btn-outline-success text-sm text-gray-700 underline">Home</a>
-                    @else
-                        
-
-                        <!-- @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif -->
-                        <a href="{{ url('/login') }}" class="btn btn-outline-success text-sm text-gray-700 underline inicioSesion">Inicio de Sesion</a>
-                    @endauth
-                </div>
-            @endif
+        
         
       </form>
     </div>

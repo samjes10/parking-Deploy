@@ -9,13 +9,13 @@
         <i class=" fas fa-user-lock"></i><span>Roles</span>
     </a>
     <a class="nav-link" href="/parqueos">
-        <i class="fa-solid fa-square-parking"></i><span>Parqueos</span>
+        <i class="fas fa-car-side"></i><span>Parqueos</span>
     </a>
     <a class="nav-link" href="/espacios">
-        <i class="fa-solid fa-square-parking"></i><span>Asignacion de sitios</span>
+        <i class="fas fa-th-list"></i><span>Asignacion de sitios</span>
     </a>
     <a class="nav-link" href="/pagos">
-        <i class="fa-solid fa-square-parking"></i><span>Pagos</span>
+        <i class="fas fa-money-bill"></i><span>Pagos</span>
     </a>
     
     <!-- <a class="nav-link" href="/blogs">
