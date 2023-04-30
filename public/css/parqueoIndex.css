@@ -20,7 +20,10 @@
 
 .card-header{
     display: flex;
-    margin-right: 15%;
-    /*width: max-content;*/
+}
+
+.eliminar-parqueo{
+    margin-left: 30%;
+    padding-left: 30%;
 }
 

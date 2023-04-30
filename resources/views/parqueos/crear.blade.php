@@ -1,23 +1,7 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<script>
-    function generarTabla(filas, columnas) {
-        let tabla = '';
-        let cont = 1;
-            for (let i = 1; i <= filas; i++) {
-                tabla += '<div class="fila">';
-                    for (let j = 1; j <= columnas; j++) {
-                        let codigo = 'P-E-'+cont;
-                        tabla += '<button class="btn-espacio">'+codigo + '</button>';
-                            cont++;
-                    }
-                    tabla += '</div>';
-            }
-            document.getElementById('tabla-botones').innerHTML = tabla;
-  
-    }
-</script>
+
 @extends('layouts.app')
 <link rel="stylesheet" href="{{ asset('/css/espacios.css') }}">
 @section('content')
@@ -83,3 +67,19 @@
         </div>
     </section>
 @endsection
+<script>
+    function generarTabla(filas, columnas) {
+        let tabla = '';
+        let cont = 1;
+        for (let i = 1; i <= filas; i++) {
+            tabla += '<div class="fila">';
+            for (let j = 1; j <= columnas; j++) {
+                let codigo = 'PE-'+cont;
+                tabla += '<div class="espacio">'+codigo + '</div>';
+                cont++;
+            }
+            tabla += '</div>';
+        }
+        document.getElementById('tabla-botones').innerHTML = tabla;
+    }
+</script>

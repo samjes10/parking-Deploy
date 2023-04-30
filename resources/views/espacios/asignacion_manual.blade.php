@@ -21,20 +21,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($usuarios as $usuario)
-                                    <tr>
-                                        <td>{{ $usuario->id }}</td>
-                                        <td>{{ $usuario->name }}</td>
-                                        <td>
-                                        <select name="espacio_usuario_{{ $usuario->id }}">
-                                        <option value="">Seleccione un espacio</option>
-                                    @foreach ($espacios as $espacio)
-                                        <option value="{{ $espacio->id }}">{{ $espacio->codigo }}</option>
-                                    @endforeach
-                                        </select>
-                                        </td>
-                                    </tr>
-                                    @endforeach
+                                    
                                 </tbody>
                             </table>
                         </div>

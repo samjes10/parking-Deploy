@@ -19,7 +19,8 @@ class ParqueoController extends Controller
     public function index()
     {
         $parqueos = Parqueo::All();
-        return view('parqueos.index', compact('parqueos'));
+        $espacios = Espacio::all();
+        return view('parqueos.index', compact('parqueos', 'espacios'));
     }
 
     /**
@@ -79,7 +80,7 @@ class ParqueoController extends Controller
         $cont = 1;
         for ($i = 1; $i <= $filas; $i++) {
             for ($j = 1; $j <= $columnas; $j++) {
-                $codigo = 'P-E-'.$cont;
+                $codigo = 'PE-'.$cont;
                 $espacios = new Espacio;
                 $espacios->codigo = $codigo;
                 $espacios->estado = 'disponible';
@@ -102,6 +103,14 @@ class ParqueoController extends Controller
     public function show($id)
     {
         //
+        // Obtener el parqueo desde la base de datos
+        $parqueos = Parqueo::find($id);
+
+        // Obtener los espacios del parqueo
+        $espacios = Espacio::where('parqueo_id', $parqueos->id)->get();
+
+        // Pasar el parqueo y los espacios a la vista
+        return view('index', ['parqueo' => $parqueos, 'espacios' => $espacios]);
     }
 
     /**
@@ -136,5 +145,8 @@ class ParqueoController extends Controller
     public function destroy($id)
     {
         //
+        $parqueo = Parqueo::findOrFail($id);
+        $parqueo->delete();
+        return redirect()->route('parqueos.index')->with('success', 'Parqueo eliminado exitosamente.');
     }
 }

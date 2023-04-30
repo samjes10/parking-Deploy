@@ -18,16 +18,35 @@
                                 <div class="card-header">
                                     <h5>{{ $parqueo->nombre }}</h5>
                                     
-                                    <div class="menu-action">
-
+                                    <div class="eliminar-parqueo">
+                                        <form method="POST" action="{{ route('parqueos.destroy', ['parqueo' => $parqueo->id]) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-primary">Eliminar</button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                
+                                    <table>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>Código</th>
+                                            <th>Estado</th>
+                                            <th>Descripción</th>
+                                        </tr>
+                                        @foreach ($parqueo->espacios as $espacio)
+                                            <tr>
+                                                <td>{{ $espacio->id}}</td>
+                                                <td>{{ $espacio->codigo }}</td>
+                                                <td>{{ $espacio->estado }}</td>
+                                                <td>{{ $espacio->descripcion}}</td>
+                                            </tr>
+                                        @endforeach
+                                    </table>
                                 </div>
                                     
-                                <!-- Agregar más campos según sea necesario -->
-                                </div>
+                            <!-- Agregar más campos según sea necesario -->
+                            </div>
                             @endforeach    
 
                             <!-- Centramos la paginacion a la derecha -->

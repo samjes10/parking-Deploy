@@ -13,6 +13,7 @@ class CreateEspaciosTable extends Migration
      */
     public function up()
     {
+        Schema::statement('ALTER TABLE espacios AUTO_INCREMENT = 1;');
         Schema::create('espacios', function (Blueprint $table) {
             $table->id();
             $table->string('codigo');
