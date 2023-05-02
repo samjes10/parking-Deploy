@@ -30,6 +30,22 @@ class SeederTablaPermisos extends Seeder
             'editar-rol',
             'borrar-rol',
 
+            //Operaciones sobre tabla Parqueo
+            'ver-parqueo',
+            'crear-parqueo',
+            'editar-parqueo',
+            'borrar-parqueo',
+            //Operaciones sobre tabla asignacion
+            'ver-asignacion',
+            'crear-asignacion',
+            'editar-asignacion',
+            'borrar-asignacion',
+            //Operaciones sobre tabla pagos
+            'ver-pagos',
+            'crear-pagos',
+            'editar-pagos',
+            'borrar-pagos',
+
             
         ];
 

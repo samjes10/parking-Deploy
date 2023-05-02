@@ -39,3 +39,6 @@ class CreateParqueosTable extends Migration
         Schema::dropIfExists('parqueos');
     }
 }
+
+
+

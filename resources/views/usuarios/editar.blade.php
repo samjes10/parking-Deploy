@@ -23,7 +23,10 @@
                             </div>
                         @endif
 
-                        {!! Form::model($user, ['method' => 'PATCH','route' => ['usuarios.update', $user->id]]) !!}
+                        {!! Form::model($user, ['method' => 'PATCH','enctype'=>'multipart/form-data','route' => ['usuarios.update', $user->id]]) !!}
+                        
+                        @csrf
+                        @method('PUT')
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
@@ -35,6 +38,24 @@
                                 <div class="form-group">
                                     <label for="email">E-mail</label>
                                     {!! Form::text('email', null, array('class' => 'form-control')) !!}
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                <div class="form-group">
+                                   <label for="">CI </label>
+                                   <input type="number" name="carnet" id="carnet" class="form-control" value="{{ $user->carnet }}">
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                <div class="form-group">
+                                   <label for="">Cargo: </label>
+                                   <input type="text" name="cargo" id="cargo" class="form-control" value="{{ $user->cargo }}">
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                <div class="form-group">
+                                   <label for="">Direccion: </label>
+                                   <input type="text" name="direccion" id="direccion" class="form-control" value="{{ $user->direccion }}">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -55,6 +76,19 @@
                                     {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control')) !!}
                                 </div>
                             </div>
+                            <br></br>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                   <img src="/imagen/{{ $user ->imagen }}" width="200px" id="imagenSeleccionada">
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                            <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold mb-1">Subir Imagen</label>
+                              <div class='flex items-center justify-center w-full'>
+                            <label >
+                            
+                             <input name="imagen" id="imagen" type='file' class="hidden" />
+                            </label>
+                            </div>
+                            
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
                             </div>
@@ -66,4 +100,17 @@
             </div>
         </div>
     </section>
+<!-- Script para ver la imagen antes de CREAR UN NUEVO PRODUCTO -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+<script>   
+    $(document).ready(function (e) {   
+        $('#imagen').change(function(){            
+            let reader = new FileReader();
+            reader.onload = (e) => { 
+                $('#imagenSeleccionada').attr('src', e.target.result); 
+            }
+            reader.readAsDataURL(this.files[0]); 
+        });
+    });
+</script>
 @endsection
