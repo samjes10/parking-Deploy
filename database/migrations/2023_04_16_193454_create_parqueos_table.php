@@ -13,7 +13,6 @@ class CreateParqueosTable extends Migration
      */
     public function up()
     {
-        Schema::statement('ALTER TABLE parqueos AUTO_INCREMENT = 1;');
         Schema::create('parqueos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
@@ -36,3 +35,6 @@ class CreateParqueosTable extends Migration
         Schema::dropIfExists('parqueos');
     }
 }
+
+
+
