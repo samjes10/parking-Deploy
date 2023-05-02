@@ -9,7 +9,7 @@ class Parqueo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'descripcion','estado','filas','columnas','cantidadEspacios'];
+    protected $fillable = ['nombre', 'descripcion','estado','filas','columnas','cantidadEspacios', 'precio'];
 
 
     public function espacios()

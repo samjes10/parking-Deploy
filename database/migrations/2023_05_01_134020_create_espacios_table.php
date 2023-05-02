@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateEspaciosTable extends Migration
 {
@@ -13,7 +14,7 @@ class CreateEspaciosTable extends Migration
      */
     public function up()
     {
-        Schema::statement('ALTER TABLE espacios AUTO_INCREMENT = 1;');
+        
         Schema::create('espacios', function (Blueprint $table) {
             $table->id();
             $table->string('codigo');
@@ -28,6 +29,7 @@ class CreateEspaciosTable extends Migration
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
         });
+        DB::statement('ALTER TABLE espacios AUTO_INCREMENT = 1;');
     }
 
     /**
