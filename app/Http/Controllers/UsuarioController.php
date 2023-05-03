@@ -59,8 +59,6 @@ class UsuarioController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',           
             'carnet' => 'required',
-            'cargo' => 'required',
-            'direccion' => 'required',
             'password' => 'required|same:confirm-password',
             'roles' => 'required', 
             'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024'
@@ -121,12 +119,8 @@ class UsuarioController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
-            'carnet' => 'required',
-            'cargo' => 'required',
-            'direccion' => 'required',
             'password' => 'same:confirm-password',
-            'roles' => 'required', 
-            'imagen' => 'image|mimes:jpeg,png,svg|max:1024'
+            'roles' => 'required'
         ]);
     
         $input = $request->all();
@@ -135,12 +129,6 @@ class UsuarioController extends Controller
         }else{
             $input = Arr::except($input,array('password'));    
         }
-        if($imagen = $request->file('imagen')) {
-            $rutaGuardarImg = 'imagen/';
-            $imagenUser = date('YmdHis'). "." . $imagen->getClientOriginalExtension();
-            $imagen->move($rutaGuardarImg, $imagenUser);
-            $input['imagen'] = "$imagenUser";             
-        } 
     
         $user = User::find($id);
         $user->update($input);

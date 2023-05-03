@@ -21,9 +21,7 @@ class SuperAdminSeeder extends Seeder
             'name' => 'Ana Lopez',
             'email' => 'admin123@gmail.com',
             'carnet' => '8765432',
-            'cargo' => 'Docente de Electronica',
-            'direccion' => 'Zona Norte / OTB-Ice Norte /calle martinez',
-            'password' => bcrypt('1234')
+            'password' => bcrypt('12345678')
         ]);
 
         $rol=Role::create(['name'=>'Administrador']);

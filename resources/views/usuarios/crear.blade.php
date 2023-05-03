@@ -38,22 +38,10 @@
                                     {!! Form::text('email', null, array('class' => 'form-control')) !!}
                                 </div>
                             </div>
-                            <div class="col-xs-4 col-sm-4 col-md-4">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                    <label for="">CI </label>
                                    <input type="number" name="carnet" id="carnet" class="form-control" value="value">
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-sm-4 col-md-4">
-                                <div class="form-group">
-                                   <label for="">Cargo: </label>
-                                   <input type="text" name="cargo" id="cargo" class="form-control" placeholder="Ocupacion Laboral">
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-sm-4 col-md-4">
-                                <div class="form-group">
-                                   <label for="">Direccion: </label>
-                                   <input type="text" name="direccion" id="direccion" class="form-control" placeholder="Zona / OTB / barrio / Calles">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">

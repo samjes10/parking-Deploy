@@ -14,6 +14,7 @@ class CreateEspaciosTable extends Migration
      */
     public function up()
     {
+        
         Schema::create('espacios', function (Blueprint $table) {
             $table->id();
             $table->string('codigo');
@@ -41,5 +42,3 @@ class CreateEspaciosTable extends Migration
         Schema::dropIfExists('espacios');
     }
 }
-
-
