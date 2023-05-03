@@ -41,3 +41,5 @@ class CreateEspaciosTable extends Migration
         Schema::dropIfExists('espacios');
     }
 }
+
+
