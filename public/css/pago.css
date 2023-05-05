@@ -40,4 +40,12 @@ label {
     color: white;
     
   }
+
+  .img-qr img{
+    width: 250px;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+  }
+  
   
