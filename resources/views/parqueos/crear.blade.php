@@ -76,17 +76,21 @@
 @endsection
 <script>
     function generarTabla(filas, columnas) {
-        let tabla = '';
-        let cont = 1;
-        for (let i = 1; i <= filas; i++) {
-            tabla += '<div class="fila">';
-            for (let j = 1; j <= columnas; j++) {
-                let codigo = 'PE-'+cont;
-                tabla += '<div class="espacio">'+codigo + '</div>';
-                cont++;
-            }
-            tabla += '</div>';
+    let tabla = '';
+    let cont = 1;
+    let codigos = ''; // Variable para almacenar los códigos de cada espacio
+    for (let i = 1; i <= filas; i++) {
+        tabla += '<div class="fila">';
+        for (let j = 1; j <= columnas; j++) {
+            let codigo = 'PE-'+cont;
+            tabla += '<div class="espacio">'+codigo + '</div>';
+            codigos += codigo + ','; // Agregar el código al final de la lista de códigos
+            cont++;
         }
-        document.getElementById('tabla-botones').innerHTML = tabla;
+        tabla += '</div>';
     }
+    document.getElementById('tabla-botones').innerHTML = tabla;
+    document.getElementById('codigos-input').value = codigos.slice(0, -1); // Asignar la lista de códigos al campo oculto
+}
+
 </script>

@@ -23,9 +23,12 @@ class EspacioController extends Controller
      */
     public function create()
     {
-        $usuarios = User::all() ?? null;
+        //$usuarios = User::all() ?? null;
         $espacios = Espacio::All();
-        
+        $usuarios = User::pluck('nombre', 'id');
+        $espacios = Espacio::where('disponible', true)->pluck('codigo', 'id');
+
+    return view('asignarEspacio', compact('clientes', 'espacios'));
         if (count($usuarios) < count($espacios)) {
             return view('espacios.asignacion_manual', compact('usuarios', 'espacios'));
         } else {

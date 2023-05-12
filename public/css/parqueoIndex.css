@@ -27,6 +27,24 @@
     padding-left: 30%;
 }
 
-.card-body{
+.card-body-info{
+    padding: 15px;
+}
+
+.card-body-info table th{
     color: white;
+}
+
+.card-body-info table td{
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: black;
+}
+  
+td, th {
+    border: 1px solid rgb(255, 255, 255);
+    padding: 8px;
 }

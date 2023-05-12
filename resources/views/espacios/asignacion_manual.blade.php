@@ -12,18 +12,18 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="lista-lientes">
-                            <table class="table table-dark table-striped">
-                                <thead>
-                                    <tr>
-                                    <th scope="col">Nro</th>
-                                    <th scope="col">Nombre Completo</th>
-                                    <th scope="col">COD-Espacio</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                </tbody>
-                            </table>
+                        {!! Form::open(['route' => 'asignarEspacio', 'method' => 'post']) !!}
+                            <div class="form-group">
+                                {!! Form::label('cliente_id', 'Cliente') !!}
+                                {!! Form::select('cliente_id', $clientes, null, ['class' => 'form-control']) !!}
+                            </div>
+                            <div class="form-group">
+                                {!! Form::label('espacio_id', 'Espacio') !!}
+                                {!! Form::select('espacio_id', $espacios, null, ['class' => 'form-control']) !!}
+                            </div>
+                            {!! Form::submit('Asignar', ['class' => 'btn btn-primary']) !!}
+                            {!! Form::close() !!}
+
                         </div>
                     </div>
                 </div>
