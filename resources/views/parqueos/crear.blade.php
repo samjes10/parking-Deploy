@@ -47,7 +47,14 @@
                                 
                                     <div class="form-group" style="width: 25%">
                                         {!! Form::label('descripcion', 'Descripción del parqueo') !!}
-                                        {!! Form::textarea('descripcion', null, array('placeholder' => 'Descripción del parqueo','class' => 'form-control')) !!}
+                                        {!! Form::textarea('descripcion', isset($parqueo) ? $parqueo->precio : null, array('placeholder' => 'Descripción del parqueo','class' => 'form-control')) !!}
+                                    </div>
+                                    <div class="form-group" style="width: 10%">
+                                    {!! Form::label('precio', 'Precio') !!}
+                                    {!! Form::text('precio', null, ['placeholder' => '0 Bs', 'min' => '1', 'class' => 'form-control', 'id' => 'precio-input']) !!}
+                                    @if ($errors->has('precio'))
+                                            <div class="invalid-feedback">{{ $errors->first('precio') }}</div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div>

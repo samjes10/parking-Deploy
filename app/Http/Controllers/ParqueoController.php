@@ -36,7 +36,8 @@ class ParqueoController extends Controller
      */
     public function create()
     {
-        return view('parqueos.crear');
+        $parqueos = Parqueo::All();
+        return view('parqueos.crear', compact('parqueos'));
     }
 
     /**
@@ -73,6 +74,7 @@ class ParqueoController extends Controller
         $parqueo->filas = $request->filas;
         $parqueo->columnas = $request->columnas;
         $parqueo->cantidadEspacios = $request->filas * $request->columnas;
+        $parqueo->precio = $request->precio;
 
         // Guardar el objeto Parqueo en la base de datos
         $parqueo->save();

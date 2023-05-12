@@ -2,7 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\MySqlBuilder;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateParqueosTable extends Migration
 {
@@ -21,8 +23,10 @@ class CreateParqueosTable extends Migration
             $table->integer('filas');
             $table->integer('columnas');
             $table->integer('cantidadEspacios');
+            $table->decimal('precio', 8, 2);
             $table->timestamps();
         });
+        DB::statement('ALTER TABLE parqueos AUTO_INCREMENT = 1;');
     }
 
     /**
