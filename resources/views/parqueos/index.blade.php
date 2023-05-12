@@ -11,7 +11,9 @@
                     <div class="card">
                         <div class="card-body">
                             <!-- Agregamos el botón de añadir parqueos -->
+                            @can('crear-parqueo')
                             <a href="{{ route('parqueos.create') }}" class="btn btn-primary mb-3">Añadir Parqueo</a>
+                            @endcan
                             
                             @foreach($parqueos as $parqueo)
                             <div class="card-parqueos">
@@ -19,11 +21,13 @@
                                     <h5>{{ $parqueo->nombre }}</h5>
                                     
                                     <div class="eliminar-parqueo">
+                                    @can('borrar-parqueo')
                                         <form method="POST" action="{{ route('parqueos.destroy', ['parqueo' => $parqueo->id]) }}">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-primary">Eliminar</button>
                                         </form>
+                                    @endcan
                                     </div>
                                 </div>
                                 <div class="card-body">

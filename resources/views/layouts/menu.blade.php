@@ -12,12 +12,12 @@
         <i class=" fas fa-user-lock"></i><span>Roles</span>
     </a>
    @endcan
-   <!--   @can('ver-parqueo') -->
+   @can('ver-parqueo') 
     <a class="nav-link" href="/parqueos">
         <i class="fas fa-car-side"></i><span>Parqueos</span>
     </a>
-<!--     @endcan
-    @can('ver-asignar-espacio')  -->
+    @endcan
+ <!--      @can('ver-asignar-espacio')  -->
     <a class="nav-link" href="/espacios">
         <i class="fas fa-th-list"></i><span>Asignacion de sitios</span>
     </a>
@@ -32,5 +32,8 @@
     </a> -->
     <a class="nav-link" href="/espacios">
         <i class="fas fa-th-list"></i><span>Asignacion de sitios</span>
+    </a>
+    <a class="nav-link" href="/convocatorias">
+        <i class="fas fa-th-list"></i><span>lanzar convocatoria</span>
     </a>
 </li>

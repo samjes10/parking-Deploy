@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class ParqueoController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:ver-parqueo|crear-parqueo|editar-parqueo|borrar-parqueo',['only' => ['index']]);
+         $this->middleware('permission:crear-parqueo', ['only' => ['create','store']]);
+         $this->middleware('permission:borrar-parqueo', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *

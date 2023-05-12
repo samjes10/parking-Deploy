@@ -11,6 +11,7 @@ use App\Http\Controllers\OperadorController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\EspacioController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ConvocatoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,7 @@ Route::resource('espacios', EspacioController::class);
 Route::resource('operador', OperadorController::class);
 Route::resource('pagos', PagoController::class);
 Route::post('/procesar-pago', [PagoController::class, 'procesarPago'])->name('procesar_pago');
+Route::resource('convocatorias', ConvocatoriaController::class);
 
 //Route::get('/operador', function () {
 //    return view('operador');

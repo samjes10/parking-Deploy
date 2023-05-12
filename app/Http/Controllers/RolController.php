@@ -17,6 +17,7 @@ class RolController extends Controller
          $this->middleware('permission:editar-rol', ['only' => ['edit','update']]);
          $this->middleware('permission:borrar-rol', ['only' => ['destroy']]);
     }
+    
     /**
      * Display a listing of the resource.
      *
