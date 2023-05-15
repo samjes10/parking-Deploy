@@ -15,16 +15,17 @@ class CreatePagosTable extends Migration
     {
         Schema::create('pagos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('asignacion_id');
+            
             $table->string('codigoEspacio');
             $table->string('cliente');
-            $table->decimal('monto', 10, 2)->change();
+            $table->decimal('precio_Espacio', 10, 2)->change();
             $table->integer('dias_retraso');
+            $table->decimal('descuento', 10, 2)->change();
             $table->decimal('total', 10, 2)->change();
             $table->string('detalle')->nullable();
-            $table->date('fecha_hora_actual');
             $table->timestamps();
 
+            $table->unsignedBigInteger('asignacion_id');
             $table->foreign('asignacion_id')->references('id')->on('asignaciones');
         });
     }

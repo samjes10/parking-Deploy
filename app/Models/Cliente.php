@@ -9,7 +9,7 @@ class Cliente extends Model
 {
     use HasFactory;
     protected $table = 'clientes';
-    protected $fillable = ['nombre', 'primer_apellido', 'segundo_apellido', 'email','carnet', 'cargo', 'direccion', 'password', 'imagen', 'espacioAsignado'
+    protected $fillable = ['nombre', 'primer_apellido', 'segundo_apellido', 'email', 'telefono', 'carnet', 'cargo', 'direccion', 'password', 'espacioAsignado', 'imagen'
     ];
 
     public function asignaciones()

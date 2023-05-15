@@ -10,7 +10,7 @@ class Pago extends Model
     use HasFactory;
     protected $table = 'pagos';
     protected $fillable = [
-        'asignacion_id', 'codigoEspacio', 'cliente', 'monto', 'dias_retraso', 'total', 'detalle', 'fecha_hora_actual'
+        'codigoEspacio', 'cliente', 'precio_Espacio', 'dias_retraso', 'descuento', 'total', 'detalle', 'asignacion_id'
     ];
 
     public function asignacion()

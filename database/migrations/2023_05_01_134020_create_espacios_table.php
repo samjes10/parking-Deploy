@@ -20,6 +20,7 @@ class CreateEspaciosTable extends Migration
             $table->string('codigo');
             $table->string('decripcion')->nullable();
             $table->string('estado')->nullable();
+            $table->string('ubicacion')->nullable();
             $table->timestamps();
 
             $table->unsignedBigInteger('parqueo_id');

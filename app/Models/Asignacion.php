@@ -10,7 +10,7 @@ class Asignacion extends Model
     use HasFactory;
     protected $table = 'asignaciones';
     protected $fillable = [
-        'cliente_id', 'espacio_id', 'fecha_hora_actual', 'fecha_limite', 'codigoEspacio', 'cliente'
+        'fecha_hora_actual', 'fecha_limite', 'carnet_Cliente' , 'nombre_Cliente', 'codigoEspacio', 'estado_pago', 'cliente_id', 'espacio_id'
     ];
     
     public function pagos()

@@ -16,14 +16,15 @@ class CreateAsignacionesTable extends Migration
     {
         Schema::create('asignaciones', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cliente_id');
-            $table->unsignedBigInteger('espacio_id');
-            $table->timestamp('fecha_hora_actual')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->date('fecha_limite');
+            $table->string('carnet_Cliente');
+            $table->string('nombre_Cliente');
             $table->string('codigoEspacio');
-            $table->string('cliente');
+            $table->string('estado_pago')->nullable();
             $table->timestamps();
 
+            $table->unsignedBigInteger('cliente_id');
+            $table->unsignedBigInteger('espacio_id');
             $table->foreign('cliente_id')->references('id')->on('clientes')->onUpdate('cascade');
             $table->foreign('espacio_id')->references('id')->on('espacios')->onUpdate('cascade');
         });

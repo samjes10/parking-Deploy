@@ -17,9 +17,8 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>ID Cliente</th>
-                                    <th>ID Espacio</th>
-                                    <th>Nombre de cliente</th>
+                                    <th>Carnet Cliente</th>
+                                    <th>Nombre Cliente</th>
                                     <th>Fecha/Hora Actual</th>
                                     <th>Fecha Límite</th>
                                     <th>Código Espacio</th>
@@ -29,10 +28,9 @@
                                 @foreach ($asignaciones as $asignacion)
                                     <tr>
                                         <td>{{ $asignacion->id }}</td>
-                                        <td>{{ $asignacion->cliente_id }}</td>
-                                        <td>{{ $asignacion->espacio_id }}</td>
-                                        <td>{{ $asignacion->cliente }}
-                                        <td>{{ DateTime::createFromFormat('Y-m-d H:i:s', $asignacion->fecha_hora_actual)->format('d/m/Y H:i') }}</td>
+                                        <td>{{ $asignacion->carnet_Cliente }}</td>
+                                        <td>{{ $asignacion->nombre_Cliente }}</td>
+                                        <td>{{ DateTime::createFromFormat('Y-m-d H:i:s', $asignacion->created_at)->format('d/m/Y H:i') }}</td>
                                         <td>{{ DateTime::createFromFormat('Y-m-d', $asignacion->fecha_limite)->format('d/m/Y') }}</td>
                                         <td>{{ $asignacion->codigoEspacio }}</td>
                                     </tr>

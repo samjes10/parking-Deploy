@@ -59,7 +59,7 @@ class AsignacionController extends Controller
     {
         // Validar formulario
         $request->validate([
-            'fecha_limite' => 'required|date|after:fecha_hora_actual'
+            'fecha_limite' => 'required|date|'
         ]);
 
         // Verificar si el espacio está ocupado
@@ -71,12 +71,12 @@ class AsignacionController extends Controller
         
         // Asignar espacio a cliente
         $asignacion = new Asignacion();
+        $asignacion->fecha_limite = $request->fecha_limite;
+        $asignacion->carnet_Cliente = Cliente::find($request->cliente_id)->carnet;
+        $asignacion->nombre_Cliente = Cliente::find($request->cliente_id)->nombre;
+        $asignacion->codigoEspacio = Espacio::find($request->espacio_id)->codigo;
         $asignacion->cliente_id = $request->cliente_id;
         $asignacion->espacio_id = $request->espacio_id;
-        $asignacion->fecha_limite = $request->fecha_limite;
-        $asignacion->codigoEspacio = Espacio::find($request->espacio_id)->codigo;
-        $asignacion->cliente = Cliente::find($request->cliente_id)->nombre;
-        
         $asignacion->save();
 
         // Actualizar estado del espacio a "ocupado"

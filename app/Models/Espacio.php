@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Espacio extends Model
 {
     use HasFactory;
-    protected $filliable = ['id', 'codigo', 'descripcion', 'estado', 'parqueo_id'];
+    protected $table = 'espacios';
+    protected $filliable = ['codigo', 'descripcion', 'estado', 'ubicacion', 'parqueo_id'];
 
     public function parqueo()
     {

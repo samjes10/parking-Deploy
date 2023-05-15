@@ -18,11 +18,13 @@ class CreateClientesTable extends Migration
         $table->string('nombre');
         $table->string('primer_apellido');
         $table->string('segundo_apellido')->nullable();
-        $table->string('email')->unique();        
+        $table->string('email')->unique();
+        $table->integer('telefono')->nullable();
         $table->integer('carnet')->unique();
         $table->string('cargo')->nullable();
         $table->string('direccion')->nullable();
         $table->string('password');
+        $table->string('espacioAsignado')->nullable();
         $table->string('imagen')->nullable();
         $table->timestamps();
     });
