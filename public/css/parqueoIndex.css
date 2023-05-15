@@ -1,7 +1,7 @@
 .card-parqueos {
-    background-image: url("/img/fondoCars2.gif");
+    background-image: url("/img/fondoCars4.jpg");
     background-position: center;
-    background-color: rgba(20, 2, 2, 0.20);
+    background-color: rgba(80, 56, 56, 0.2);
     background-size:cover;
     color: white;
     margin-top: 3%;
@@ -47,4 +47,24 @@ table {
 td, th {
     border: 1px solid rgb(255, 255, 255);
     padding: 8px;
+}
+
+input:valid {
+    border-color: green;
+}
+
+input:invalid {
+    border-color: red;
+}
+  
+.required {
+    color: red;
+}
+
+.disponible {
+    background-color: rgba(0, 128, 19, 0.47);
+}
+  
+.ocupado {
+    background-color: rgb(123, 4, 4);
 }

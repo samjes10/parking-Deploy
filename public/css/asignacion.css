@@ -1,0 +1,39 @@
+input:valid {
+    border-color: green;
+}
+
+input:invalid {
+    border-color: red;
+}
+  
+.required {
+    color: red;
+}
+
+.card-body {
+    
+
+}
+
+.table {
+    color: white;
+}
+
+.card-body table thead{
+    background-color: black;
+    color: white;
+}
+
+.card-body table tbody {
+    background-color: rgb(50, 44, 99);
+    color: white;
+}
+
+td, th {
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    padding: 10px;
+}
+
+  
+  

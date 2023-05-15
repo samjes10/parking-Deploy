@@ -4,6 +4,7 @@
 
 @extends('layouts.app')
 <link rel="stylesheet" href="{{ asset('/css/espacios.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/parqueoIndex.css') }}">
 @section('content')
     <section class="section">
         <div class="section-header">
@@ -20,21 +21,21 @@
                                 <div class ="input-parqueo">
                                     <div class="form-group" style="width: 20%">
                                         {!! Form::label('nombre', 'Nombre del parqueo') !!}
-                                        {!! Form::text('nombre', null, array('placeholder' => 'nombre del parqueo','class' => 'form-control')) !!}
+                                        {!! Form::text('nombre', null, array('placeholder' => 'nombre del parqueo','class' => 'form-control', 'required')) !!}
                                         @if ($errors->has('nombre'))
                                             <div class="invalid-feedback">{{ $errors->first('nombre') }}</div>
                                         @endif
                                     </div>
                                     <div class="form-group" style="width: 10%">
                                         {!! Form::label('filas', 'Filas') !!}
-                                        {!! Form::number('filas', null, array('placeholder' => '1', 'min'=>'1', 'class' => 'form-control', 'id' => 'filas-input')) !!}
+                                        {!! Form::number('filas', null, array('placeholder' => '1', 'min'=>'1', 'class' => 'form-control', 'id' => 'filas-input', 'required')) !!}
                                         @if ($errors->has('filas'))
                                             <div class="invalid-feedback">{{ $errors->first('filas') }}</div>
                                         @endif
                                     </div>
                                     <div class="form-group" style="width: 10%">
                                         {!! Form::label('columnas', 'Columnas') !!}
-                                        {!! Form::number('columnas', null, array('placeholder' => '1', 'min'=>'1',  'class' => 'form-control', 'id' => 'columnas-input')) !!}
+                                        {!! Form::number('columnas', null, array('placeholder' => '1', 'min'=>'1',  'class' => 'form-control', 'id' => 'columnas-input', 'required')) !!}
                                         @if ($errors->has('columnas'))
                                             <div class="invalid-feedback">{{ $errors->first('columnas') }}</div>
                                         @endif
@@ -51,7 +52,7 @@
                                     </div>
                                     <div class="form-group" style="width: 10%">
                                     {!! Form::label('precio', 'Precio') !!}
-                                    {!! Form::text('precio', null, ['placeholder' => '0 Bs', 'min' => '1', 'class' => 'form-control', 'id' => 'precio-input']) !!}
+                                    {!! Form::text('precio', null, ['placeholder' => '0 Bs', 'min' => '1', 'class' => 'form-control', 'id' => 'precio-input', 'required']) !!}
                                     @if ($errors->has('precio'))
                                             <div class="invalid-feedback">{{ $errors->first('precio') }}</div>
                                         @endif

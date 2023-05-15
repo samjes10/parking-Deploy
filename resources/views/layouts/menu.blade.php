@@ -11,13 +11,15 @@
     <a class="nav-link" href="/parqueos">
         <i class="fas fa-car-side"></i><span>Parqueos</span>
     </a>
-    <a class="nav-link" href="/espacios">
+    <a class="nav-link" href="/asignaciones">
         <i class="fas fa-th-list"></i><span>Asignacion de sitios</span>
+    </a>
+    <a class="nav-link" href="/clientes">
+        <i class="fas fa-th-list"></i><span>Clientes</span>
     </a>
     <a class="nav-link" href="/pagos">
         <i class="fas fa-money-bill"></i><span>Pagos</span>
     </a>
-    
     <!-- <a class="nav-link" href="/blogs">
         <i class=" fas fa-blog"></i><span>Blogs</span>
     </a> -->

@@ -16,8 +16,18 @@
               <form method="POST" action="{{ route('procesar_pago') }}" enctype="multipart/form-data">
                 @csrf
                 <div>
-                  <label for="ci">Carnet de identidad:</label>
-                  <input type="text" name="ci" id="ci" required>
+                  <div>
+                    <label for="ci">Carnet de identidad:</label>
+                    <input type="text" name="ci" id="ci" required>
+                  </div>
+                  <div>
+                    <label for="ci">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" required>
+                  </div>
+                  <div>
+                    <label for="codigoEspacio">Código de Espacio:</label>
+                    <input type="text" name="codigoEspacio" id="codigoEspacio" value="{{ $asignacion->codigoEspacio }}" readonly>
+                  </div>
                 </div>
 
                 <div>
@@ -28,6 +38,10 @@
                 <div>
                   <label for="monto">Monto:</label>
                   <input type="number" name="monto" id="monto" required>
+                </div>
+                <div>
+                  <label>Fecha y hora:</label>
+                  <input type="text" id="fechaHora" name="fechaHora" value="{{ $fechaHoraActual }}" readonly>
                 </div>
 
                 <div>

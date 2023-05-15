@@ -29,14 +29,16 @@
                                 <div class="card-body-info">
                                     <table>
                                         <tr>
-                                            <th>Código</th>
+                                            <th>ID Parqueo</th>
+                                            <th>Código Espacio</th>
                                             <th>Estado</th>
                                             <th>Descripción</th>
                                         </tr>
                                         @foreach ($parqueo->espacios as $espacio)
                                             <tr>
+                                                <td>{{ $espacio->parqueo->id }}</td>
                                                 <td>{{ $espacio->codigo }}</td>
-                                                <td>{{ $espacio->estado }}</td>
+                                                <td class="{{ $espacio->estado == 'disponible' ? 'disponible' : 'ocupado' }}">{{ $espacio->estado }}</td>
                                                 <td>{{ $espacio->descripcion}}</td>
                                             </tr>
                                         @endforeach

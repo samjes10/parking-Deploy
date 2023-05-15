@@ -14,4 +14,14 @@ class Espacio extends Model
     {
         return $this->belongsTo(Parqueo::class);
     }
+
+    public function asignaciones()
+    {
+        return $this->hasMany(Asignacion::class);
+    }
+
+    public function cliente()
+    {
+        return $this->belongsTo(Cliente::class);
+    }
 }

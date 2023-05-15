@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Espacio;
-use App\Models\Parqueo;
-use App\Models\User;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
-class EspacioController extends Controller
+class ClienteController extends Controller
 {
-    //
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $usuarios = User::all() ?? null;
-        $espacios = Espacio::All();
-        return view('espacios.index', compact('usuarios', 'espacios'));
+        //
+        return view('clientes.crear');
     }
 
     /**
@@ -24,17 +25,7 @@ class EspacioController extends Controller
      */
     public function create()
     {
-        //$usuarios = User::all() ?? null;
-        $espacios = Espacio::All();
-        $usuarios = User::pluck('nombre', 'id');
-        $espacios = Espacio::where('disponible', true)->pluck('codigo', 'id');
-
-    return view('asignarEspacio', compact('clientes', 'espacios'));
-        if (count($usuarios) < count($espacios)) {
-            return view('espacios.asignacion_manual', compact('usuarios', 'espacios'));
-        } else {
-            return view('espacios.asignacion_aleatorio', compact('usuarios', 'espacios'));
-        }
+        //
     }
 
     /**
@@ -45,17 +36,7 @@ class EspacioController extends Controller
      */
     public function store(Request $request)
     {
-        //Obtener valores de la base de datos del parqueo
-
-
-        $espacio = new Espacio();
-        $espacio->codigo = $request->codigo;
-        $espacio->descripcion = $request->descripcion;
-        $espacio->estado = $request->estado;
-        $espacio->save();
-
-        return response()->json(['mensaje'=>'Espacios de parqueo guardados correctamente']);
-        
+        //
     }
 
     /**

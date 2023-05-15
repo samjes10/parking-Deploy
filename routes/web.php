@@ -10,6 +10,8 @@ use App\Http\Controllers\ParqueoController;
 use App\Http\Controllers\OperadorController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\EspacioController;
+use App\Http\Controllers\AsignacionController;
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -45,8 +47,10 @@ Route::resource('parqueos', ParqueoController::class);
 Route::resource('espacios', EspacioController::class);
 Route::resource('operador', OperadorController::class);
 Route::resource('pagos', PagoController::class);
+Route::resource('asignaciones', AsignacionController::class);
+Route::resource('clientes', ClienteController::class);
 Route::post('/procesar-pago', [PagoController::class, 'procesarPago'])->name('procesar_pago');
 
-//Route::get('/operador', function () {
-//    return view('operador');
-//})->middleware(['auth', 'checkrole:operador']);
+
+
+
