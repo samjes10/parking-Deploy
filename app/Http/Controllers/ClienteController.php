@@ -59,7 +59,7 @@ class ClienteController extends Controller
         $cliente->cargo = $request->input('cargo');
         $cliente->direccion = $request->input('direccion');
         $cliente->password = bcrypt($request->input('password'));
-        $cliente->espacioAsignado = 'No';
+        //$cliente->espacioAsignado = '';
 
         if ($request->hasFile('imagen')) {
             $file = $request->file('imagen');
