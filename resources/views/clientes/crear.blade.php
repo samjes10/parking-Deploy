@@ -16,7 +16,7 @@
                                 <div class="col">
                                     <label for="uname" class="form-label">Nombre:</label>
                                     <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre" required>
-                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="valid-feedback">Valido.</div>
                                     <div class="invalid-feedback">Por favor, rellene este campo.</div>
                                 </div>
                                 <div class="col">

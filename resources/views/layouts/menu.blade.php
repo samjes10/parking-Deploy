@@ -20,6 +20,12 @@
     <a class="nav-link" href="/pagos">
         <i class="fas fa-money-bill"></i><span>Pagos</span>
     </a>
+    <a class="nav-link" href="/reclamos">
+        <i class=" fas fa-users"></i><span>Reclamos</span>
+    </a>
+    <!--<a class="nav-link" href="/solicitud">
+        <i class=" fas fa-users"></i><span>Solicitud de parqueo</span>
+    </a>-->
     <!-- <a class="nav-link" href="/blogs">
         <i class=" fas fa-blog"></i><span>Blogs</span>
     </a> -->

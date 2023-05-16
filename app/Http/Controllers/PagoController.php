@@ -9,6 +9,7 @@ use App\Http\Controllers\Storage;
 use App\Http\Controllers\AsignacionController;
 use Carbon\Carbon;
 use App\Models\Pago;
+use App\Models\Cliente;
 use App\Models\Asignacion;
 
 
@@ -19,21 +20,15 @@ class PagoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $asignacion = Asignacion::findOrFail($id);
+        $asignaciones = Asignacion::all();
+        $clientes = Cliente::all();
 
-        $fechaLimite = date('Y-m-d', strtotime($asignacion->created_at . ' + ' . $asignacion->dias . ' days'));
-        $diasRetraso = max(0, strtotime(date('Y-m-d')) - strtotime($fechaLimite)) / 86400;
+        //$fechaLimite = date('Y-m-d', strtotime($asignacion->created_at . ' + ' . $asignacion->dias . ' days'));
+        //$diasRetraso = max(0, strtotime(date('Y-m-d')) - strtotime($fechaLimite)) / 86400;
 
-        return view('pago.index', [
-            'asignacion_id' => $id,
-            'codigoEspacio' => $asignacion->espacio->codigo,
-            'cliente' => $asignacion->cliente->nombreCompleto(),
-            'monto' => $asignacion->precio,
-            'dias_retraso' => $diasRetraso,
-            'fechaHoraActual' => date('Y-m-d H:i:s'),
-        ]);
+        return view('pago.index', compact('asignaciones', 'clientes'));
     }
 
     public function procesar(Request $request)

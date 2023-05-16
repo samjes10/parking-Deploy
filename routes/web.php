@@ -12,6 +12,8 @@ use App\Http\Controllers\PagoController;
 use App\Http\Controllers\EspacioController;
 use App\Http\Controllers\AsignacionController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ReclamoController;
+use App\Http\Controllers\HistorialReclamoController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -39,6 +41,7 @@ Route::get('/home-operador', [App\Http\Controllers\HomeOperadorController::class
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RolController::class);
     Route::resource('usuarios', UsuarioController::class);
+    Route::resource('clientes', ClienteController::class);
     Route::resource('blogs', BlogController::class);
     
 });
@@ -48,9 +51,7 @@ Route::resource('espacios', EspacioController::class);
 Route::resource('operador', OperadorController::class);
 Route::resource('pagos', PagoController::class);
 Route::resource('asignaciones', AsignacionController::class);
-Route::resource('clientes', ClienteController::class);
+
 Route::post('/procesar-pago', [PagoController::class, 'procesarPago'])->name('procesar_pago');
-
-
-
-
+Route::resource('reclamos', ReclamoController::class);
+Route::resource('historial', HistorialReclamoController::class);

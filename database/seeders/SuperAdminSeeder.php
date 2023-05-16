@@ -5,8 +5,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Cliente;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+
 
 class SuperAdminSeeder extends Seeder
 {
@@ -23,6 +25,8 @@ class SuperAdminSeeder extends Seeder
             'carnet' => '8765432',
             'password' => bcrypt('12345678')
         ]);
+
+        $cliente = Cliente::all();
 
         $rol=Role::create(['name'=>'Administrador']);
         $permisos=Permission::pluck('id','id')->all();

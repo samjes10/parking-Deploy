@@ -13,36 +13,52 @@
           <div class="card-body">
             <div class="pagos">
               <!-- formulario_pago.blade.php -->
-              <form method="POST" action="{{ route('procesar_pago') }}" enctype="multipart/form-data">
-                @csrf
-                <div>
-                  <div>
-                    <label for="ci">Carnet de identidad:</label>
-                    <input type="text" name="ci" id="ci" required>
+                {!! Form::open(array('route' => 'procesar_pago','method'=>'POST', 'class' => 'was-validated')) !!}
+                  <div class="row">
+                    <div class="col">
+                       <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre" required>
+                        <div class="valid-feedback">Valido.</div>
+                        <div class="invalid-feedback">Por favor, rellene este campo.</div>
+                    </div>
+                    
+                    <div class="col">
+                      <label for="carnet" class="form-label">Carnet:</label>
+                      <input type="text" class="form-control" id="carnet" placeholder="carnet" name="carnet" required>
+                      <div class="valid-feedback">Valido.</div>
+                        <div class="invalid-feedback">Por favor, rellene este campo.</div>
+                    </div>
                   </div>
-                  <div>
-                    <label for="ci">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" required>
-                  </div>
-                  <div>
-                    <label for="codigoEspacio">Código de Espacio:</label>
-                    <input type="text" name="codigoEspacio" id="codigoEspacio" value="{{ $asignacion->codigoEspacio }}" readonly>
-                  </div>
-                </div>
+              
+                  <div class="row">
+                    <div class="col">
+                      <label for="cargo" class="form-label">Codigo Espacio:</label>
+                      <input type="text" class="form-control" id="codigo" placeholder="codigo" name="codigo" required>
+                      <div class="valid-feedback">Valido.</div>
+                      <div class="invalid-feedback">Por favor, rellene este campo.</div>
+                    </div>
 
-                <div>
-                  <label for="detalle">Detalle del pago:</label>
-                  <input type="text" name="detalle" id="detalle" required>
-                </div>
+                    <div class="col">
+                      <label for="cargo" class="form-label">Detalle de pago:</label>
+                      <input type="text" class="form-control" id="detalle" placeholder="detalle" name="detalle" required>
+                      <div class="valid-feedback">Valido.</div>
+                      <div class="invalid-feedback">Por favor, rellene este campo.</div>
+                    </div>
+                  </div>
 
-                <div>
-                  <label for="monto">Monto:</label>
-                  <input type="number" name="monto" id="monto" required>
-                </div>
-                <div>
-                  <label>Fecha y hora:</label>
-                  <input type="text" id="fechaHora" name="fechaHora" value="{{ $fechaHoraActual }}" readonly>
-                </div>
+                  <div class="row">
+                    <div class="col">
+                      <label for="cargo" class="form-label">Monto:</label>
+                      <input type="text" class="form-control" id="monto" placeholder="monto" name="monto">
+                      <div class="valid-feedback">Valido.</div>
+                      <div class="invalid-feedback">Por favor, rellene este campo.</div>
+                    </div>
+                    
+                    <div class="col">
+                        {!! Form::label('fecha_hora_actual', 'Fecha y hora actual:', ['class' => 'form-label']) !!}
+                        {!! Form::text('fecha_hora_actual', now(), ['class' => 'form-control', 'readonly']) !!}
+                    </div>
+                  </div>
 
                 <div>
                   <label>Tipo de pago:</label>
@@ -61,7 +77,7 @@
                   </div>
                 </div>     
                 <button class="btn-pago" type="submit">Pagar</button>
-              </form>
+              {!! Form::close() !!}
 
               <!-- Agregar este bloque de código al final de la vista -->
               <script>
@@ -83,4 +99,11 @@
     </div>
   </div>
 </section>
+<script>
+    // Obtiene la fecha y hora actual
+    var fechaHoraActual = new Date();
+
+    // Establece el valor del campo de entrada de fecha y hora actual
+    document.getElementById("fecha_hora_actual").value = fechaHoraActual.toLocaleString();
+</script>
 @endsection

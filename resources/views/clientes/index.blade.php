@@ -25,6 +25,7 @@
                                     <th>Carnet</th>
                                     <th>Cargo</th>
                                     <th>Direccion</th>
+                                    <th>Espacio Asignado</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,6 +40,7 @@
                                         <td>{{ $cliente->carnet }}</td>
                                         <td>{{ $cliente->cargo }}</td>
                                         <td>{{ $cliente->direccion }}</td>
+                                        <td>{{ $cliente->espacioAsignado }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

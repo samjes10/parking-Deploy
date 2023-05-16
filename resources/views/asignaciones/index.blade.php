@@ -19,9 +19,10 @@
                                     <th>ID</th>
                                     <th>Carnet Cliente</th>
                                     <th>Nombre Cliente</th>
-                                    <th>Fecha/Hora Actual</th>
+                                    <th>Fecha/Hora Asignacion</th>
                                     <th>Fecha Límite</th>
                                     <th>Código Espacio</th>
+                                    <th>Estado del pago</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,6 +34,7 @@
                                         <td>{{ DateTime::createFromFormat('Y-m-d H:i:s', $asignacion->created_at)->format('d/m/Y H:i') }}</td>
                                         <td>{{ DateTime::createFromFormat('Y-m-d', $asignacion->fecha_limite)->format('d/m/Y') }}</td>
                                         <td>{{ $asignacion->codigoEspacio }}</td>
+                                        <td>{{ $asignacion->estado_pago }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
