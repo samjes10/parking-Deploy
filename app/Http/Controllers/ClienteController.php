@@ -46,12 +46,7 @@ class ClienteController extends Controller
             'email' => 'required|email|max:255|unique:clientes',
             'primer_apellido' => 'required|string|max:255',
             'carnet' => 'required|numeric',
-            'telefono' => 'required|numeric',
-            'segundo_apellido' => 'required|string|max:255',
-            'cargo' => 'required|string|max:255',
-            'direccion' => 'required|string|max:255',
             'password' => 'required|string|min:8',
-            'imagen' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
         // crear una nueva instancia del cliente
         $cliente = new Cliente;

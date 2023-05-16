@@ -15,7 +15,7 @@
         <i class="fas fa-th-list"></i><span>Asignacion de sitios</span>
     </a>
     <a class="nav-link" href="/clientes">
-        <i class="fas fa-th-list"></i><span>Clientes</span>
+        <i class=" fas fa-users"></i><span>Clientes</span>
     </a>
     <a class="nav-link" href="/pagos">
         <i class="fas fa-money-bill"></i><span>Pagos</span>
