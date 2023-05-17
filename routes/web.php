@@ -55,3 +55,5 @@ Route::resource('asignaciones', AsignacionController::class);
 Route::post('/procesar-pago', [PagoController::class, 'procesarPago'])->name('procesar_pago');
 Route::resource('reclamos', ReclamoController::class);
 Route::resource('historial', HistorialReclamoController::class);
+
+//Route::get('/cliente', [App\Http\Controllers\ClienteController::class, 'login'])->name('login');

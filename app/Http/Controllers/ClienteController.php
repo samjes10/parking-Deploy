@@ -116,4 +116,9 @@ class ClienteController extends Controller
     {
         //
     }
+
+    /*public function login()
+    {
+        return view('clientes.login');
+    }*/
 }
