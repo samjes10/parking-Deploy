@@ -23,6 +23,9 @@
     <a class="nav-link" href="/reclamos">
         <i class=" fas fa-users"></i><span>Reclamos</span>
     </a>
+    <a class="nav-link" href="/convocatorias">
+        <i class=" fas fa-users"></i><span>Convocatorias</span>
+    </a>
     <!--<a class="nav-link" href="/solicitud">
         <i class=" fas fa-users"></i><span>Solicitud de parqueo</span>
     </a>-->

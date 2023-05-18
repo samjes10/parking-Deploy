@@ -14,6 +14,8 @@ use App\Http\Controllers\AsignacionController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ReclamoController;
 use App\Http\Controllers\HistorialReclamoController;
+use App\Http\Controllers\ConvocatoriaController;
+
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -55,5 +57,6 @@ Route::resource('asignaciones', AsignacionController::class);
 Route::post('/procesar-pago', [PagoController::class, 'procesarPago'])->name('procesar_pago');
 Route::resource('reclamos', ReclamoController::class);
 Route::resource('historial', HistorialReclamoController::class);
+Route::resource('convocatorias', ConvocatoriaController::class);
 
 //Route::get('/cliente', [App\Http\Controllers\ClienteController::class, 'login'])->name('login');
