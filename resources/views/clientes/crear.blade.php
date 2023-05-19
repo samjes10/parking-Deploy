@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="{{ asset('/css/asignacion.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/cliente.css') }}">
 @section('content')
 
 <section class="section">
@@ -11,7 +11,20 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
+                        <div class="container nuevo-clientes">
                         {!! Form::open(array('route' => 'clientes.store','method'=>'POST', 'class' => 'was-validated')) !!}
+                        <div class="client">
+                                <div class="avartar">
+                                    <a href="#">
+                                        <img src="https://colorlib.com/etc/bwiz/colorlib-wizard-6/images/avartar.png" alt="">
+                                    </a>
+                                    <div class="avartar-picker">
+                                        <input type="file" name="file-1[]" id="file-1" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
                             <div class="row">
                                 <div class="col">
                                     <label for="uname" class="form-label">Nombre:</label>
@@ -83,6 +96,7 @@
                             <button type="submit" class="btn btn-primary">Guardar</button>
                             <a href="{{ route('clientes.index') }}" class="btn btn-primary">Cancelar</a>
                         {!! Form::close() !!}
+                        </div>
                     </div>
                 </div>
             </div>

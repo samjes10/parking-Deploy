@@ -76,16 +76,15 @@
                             </div>
                             <!-- Para ver la imagen seleccionada, de lo contrario no se -->
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <img id="imagenSeleccionada" style="max-height: 150px;">           
+                                <img id="imagenSeleccionada" style="max-height: 150px;">
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold mb-1">Subir Imagen</label>
                               <div class='flex items-center justify-center w-full'>
                                 <label >
-                            
-                                  <input name="imagen" id="imagen" type='file' class="hidden" />
-                               </label>
+                                    <input name="imagen" id="imagen" type='file' class="hidden" />
+                                </label>
                               </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">

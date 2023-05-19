@@ -20,26 +20,12 @@
                             </div>
                             {!! Form::open(array('route' => 'reclamos.store','method'=>'POST', 'class' => 'was-validated')) !!}
                                 <h3>Has tu reclamo o queja...!</h3>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" name="txtName" class="form-control" placeholder="Ingrese su nombre *" value="" required/>
-                                            <div class="valid-feedback">Valido.</div>
-                                            <div class="invalid-feedback">Por favor, rellene este campo.</div>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="txtAsunto" class="form-control" placeholder="Asunto *" value="" required/>
-                                            <div class="valid-feedback">Valido.</div>
-                                            <div class="invalid-feedback">Por favor, rellene este campo.</div>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="submit" href="{{ route('reclamos.index') }}" name="btnSubmit" class="btnContact" value="Enviar reclamo" />
-                                        </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <textarea name="txtMsg" class="form-control" placeholder="Escriba su reclamo *" style="width: 200%; height: 120px;" required></textarea>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <textarea name="txtMsg" class="form-control" placeholder="Escriba su reclamo *" style="width: 100%; height: 120px;" required></textarea>
-                                        </div>
+                                    <div class="btnSubmit">
+                                        <input type="submit" href="{{ route('reclamos.index') }}" name="btnSubmit" class="btnSubmit" value="Enviar reclamo" />
                                     </div>
                                 </div>
                             {!! Form::close() !!}

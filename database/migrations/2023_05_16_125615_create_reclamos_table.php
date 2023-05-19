@@ -17,7 +17,6 @@ class CreateReclamosTable extends Migration
             $table->id();
             $table->unsignedBigInteger('cliente_id');
             $table->string('nombre_cliente');
-            $table->string('asunto');
             $table->string('mensaje');
             $table->timestamps();
 

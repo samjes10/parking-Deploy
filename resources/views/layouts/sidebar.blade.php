@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('/css/menus.css') }}">
 <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
         <img class="navbar-brand-full app-header-logo" src="{{ asset('img/logo.png') }}" width="65"
