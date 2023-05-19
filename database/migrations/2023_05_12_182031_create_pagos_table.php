@@ -23,6 +23,8 @@ class CreatePagosTable extends Migration
             $table->decimal('descuento', 10, 2)->change();
             $table->decimal('total', 10, 2)->change();
             $table->string('detalle')->nullable();
+            $table->text('mes')->nullable();
+            $table->text('mes_pago')->nullable();
             $table->timestamps();
 
             $table->unsignedBigInteger('asignacion_id');

@@ -12,7 +12,8 @@ class Cliente extends Authenticatable
 {
     use HasFactory, Notifiable, HasRoles;
     protected $table = 'clientes';
-    protected $fillable = ['nombre', 'primer_apellido', 'segundo_apellido', 'email', 'telefono', 'carnet', 'cargo', 'direccion', 'password', 'espacioAsignado', 'imagen'
+    protected $fillable = [
+        'nombre', 'primer_apellido', 'segundo_apellido', 'email', 'telefono', 'carnet', 'cargo', 'direccion', 'password', 'espacioAsignado', 'imagen'
     ];
 
     protected $hidden = [
@@ -32,5 +33,10 @@ class Cliente extends Authenticatable
     public function reclamos()
     {
         return $this->hasMany(Reclamo::class);
+    }
+
+    public function pagos()
+    {
+        return $this->hasMany(Pago::class);
     }
 }

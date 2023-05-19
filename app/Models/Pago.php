@@ -17,5 +17,4 @@ class Pago extends Model
     {
         return $this->belongsTo(Asignacion::class);
     }
-
 }
