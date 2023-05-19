@@ -16,7 +16,6 @@ class CreateReclamosTable extends Migration
         Schema::create('reclamos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('cliente_id');
-            $table->string('nombre_cliente');
             $table->string('mensaje');
             $table->timestamps();
 

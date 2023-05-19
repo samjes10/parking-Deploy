@@ -18,8 +18,8 @@ class CreateHistorialReclamosTable extends Migration
             $table->foreignId('reclamo_id')->constrained('reclamos');
             $table->foreignId('cliente_id')->constrained('clientes');
             $table->string('nombre_cliente');
-            $table->string('accion');
-            $table->text('descripcion');
+            $table->string('accion')->nullable();
+            $table->text('descripcion')->nullable();
             $table->timestamps();
         });
     }

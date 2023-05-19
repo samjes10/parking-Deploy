@@ -86,12 +86,6 @@
                                     <div class="valid-feedback">Valido.</div>
                                     <div class="invalid-feedback">Por favor, rellene este campo.</div>
                                 </div>
-                                <div class="col">
-                                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold mb-1">Subir Imagen</label>
-                                    <div class='flex items-center justify-center w-full'>
-                                        <label><input name="imagen" id="imagen" type='file' class="hidden" /></label>
-                                    </div>
-                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Guardar</button>
                             <a href="{{ route('clientes.index') }}" class="btn btn-primary">Cancelar</a>
