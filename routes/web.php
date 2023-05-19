@@ -38,6 +38,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/home-operador', [App\Http\Controllers\HomeOperadorController::class, 'index'])->name('home-operador');
+Route::get('/abrir-modal', [App\Http\Controllers\ConvocatoriaController::class, 'show'])->name('abrir-modal');
 
 //y creamos un grupo de rutas protegidas para los controladores
 Route::group(['middleware' => ['auth']], function() {
@@ -58,5 +59,7 @@ Route::post('/procesar-pago', [PagoController::class, 'procesarPago'])->name('pr
 Route::resource('reclamos', ReclamoController::class);
 Route::resource('historial', HistorialReclamoController::class);
 Route::resource('convocatorias', ConvocatoriaController::class);
+
+
 
 //Route::get('/cliente', [App\Http\Controllers\ClienteController::class, 'login'])->name('login');

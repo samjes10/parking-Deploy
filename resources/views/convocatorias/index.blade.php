@@ -14,6 +14,10 @@
                            
                            <a class="btn btn-warning" href="{{ route('convocatorias.create') }}">Nueva convocatoria</a>
                            
+                         <!-- Botón para abrir el modal -->
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#carruselModal">
+                            Ver Convocatorias
+                        </button>
 
                            <table class="table table-striped mt-2">
                               <thead style="background-color:#6777ef">                                     
@@ -45,6 +49,7 @@
                                       {!! Form::open(['method' => 'DELETE','route' => ['convocatorias.destroy', $convocatoria->id],'style'=>'display:inline']) !!}
                                           {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                                       {!! Form::close() !!}
+                                      
                                     
 
                                     </td>
@@ -64,3 +69,58 @@
         </div>
     </section>
 @endsection
+<style>
+    .carousel-img {
+        width: 1100px; /* Ancho deseado */
+        height: 500px; /* Alto deseado */
+        object-fit: cover; /* Ajuste de imagen */
+    }
+    .carousel-text {
+        color: white; /* Color del texto */
+        -webkit-text-stroke: 1px black; /* Borde blanco */
+        text-stroke: 1px black; /* Borde blanco */
+    }
+</style>
+
+<!-- Modal -->
+<div class="modal fade" id="carruselModal" tabindex="-1" role="dialog" aria-labelledby="carruselModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="carruselModalLabel">Convocatoria</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Slides del carrusel -->
+                    <div class="carousel-inner">
+                        @foreach ($convocatorias as $convocatoria)
+                            <div class="carousel-item{{ $loop->first ? ' active' : '' }}">
+                                <img src="/imagen/{{ $convocatoria->imagen }}"  class="carousel-img">
+                                <div class="carousel-caption">
+                                    <h3 class="carousel-text">{{ $convocatoria->titulo }}</h3>
+                                    <h4 class="carousel-text">{{ $convocatoria->descripcion }}</h4>
+                                    <h4 class="carousel-text">{{ $convocatoria->fecha_inicio }}</h4>
+                                    <h4 class="carousel-text">{{ $convocatoria->fecha_limite }}</h4>
+                                    <!-- Otros datos del objeto -->
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <!-- Controles del carrusel -->
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Siguiente</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

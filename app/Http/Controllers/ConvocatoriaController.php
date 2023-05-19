@@ -68,9 +68,13 @@ class ConvocatoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Convocatoria $convocatoria)
     {
-        //
+        return view('convocatorias.vista', compact('convocatoria'));
+    }
+    public function metodoVista()
+    {
+        return view('convocatorias.vista');
     }
 
     /**
@@ -120,8 +124,9 @@ class ConvocatoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Convocatoria $convocatoria)
     {
-        //
+        $convocatoria->delete();
+        return redirect()->route('convocatorias.index');
     }
 }
