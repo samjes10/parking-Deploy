@@ -81,7 +81,9 @@ class ConvocatoriaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $convocatoria = Convocatoria::find($id);
+    
+        return view('convocatorias.editar',compact('convocatoria'));
     }
 
     /**
@@ -91,9 +93,25 @@ class ConvocatoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Convocatoria $convocatoria)
     {
-        //
+        $request->validate([
+            'titulo' => 'required', 
+            'descripcion' => 'required',
+            'fecha_inicio' => 'required|date', 
+            'fecha_limite' => 'required|date',           
+        ]);
+         $prod = $request->all();
+         if($imagen = $request->file('imagen')){
+            $rutaGuardarImg = 'imagen/';
+            $imagenProducto = date('YmdHis') . "." . $imagen->getClientOriginalExtension(); 
+            $imagen->move($rutaGuardarImg, $imagenProducto);
+            $prod['imagen'] = "$imagenProducto";
+         }else{
+            unset($prod['imagen']);
+         }
+         $convocatoria->update($prod);
+         return redirect()->route('convocatorias.index');
     }
 
     /**
