@@ -15,16 +15,16 @@
         <i class="fas fa-th-list"></i><span>Asignacion de sitios</span>
     </a>
     <a class="nav-link" href="/clientes">
-        <i class=" fas fa-users"></i><span>Clientes</span>
+        <i class="fas fa-user-tie"></i><span>Clientes</span>
     </a>
     <a class="nav-link" href="/pagos">
         <i class="fas fa-money-bill"></i><span>Pagos</span>
     </a>
     <a class="nav-link" href="/reclamos">
-        <i class=" fas fa-users"></i><span>Reclamos</span>
+        <i class="fas fa-exclamation-triangle"></i><span>Reclamos</span>
     </a>
     <a class="nav-link" href="/convocatorias">
-        <i class=" fas fa-users"></i><span>Convocatorias</span>
+        <i class="fas fa-bullhorn"></i></i><span>Convocatorias</span>
     </a>
     <!--<a class="nav-link" href="/solicitud">
         <i class=" fas fa-users"></i><span>Solicitud de parqueo</span>

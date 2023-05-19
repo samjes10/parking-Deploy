@@ -3,14 +3,14 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h3 class="page__heading">Editar Usuario</h3>
+            <h3 class="page__heading">Editar Convocatoria</h3>
         </div>
         <div class="section-body">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
-                        <div class="card-body">
-                     
+                        <div class="card-body">     
+                                                                      
                         @if ($errors->any())                                                
                             <div class="alert alert-dark alert-dismissible fade show" role="alert">
                             <strong>¡Revise los campos!</strong>                        
@@ -22,84 +22,67 @@
                             </button>
                             </div>
                         @endif
-
-                        {!! Form::model($user, ['method' => 'PATCH','enctype'=>'multipart/form-data','route' => ['usuarios.update', $user->id]]) !!}
+                    
                         
-                        @csrf
-                        @method('PUT')
+                    {!! Form::model($convocatoria, ['method' => 'PATCH','enctype'=>'multipart/form-data','route' => ['convocatorias.update', $convocatoria->id]]) !!}
+                        
+                    @csrf
+                    @method('PUT')    
+                    
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <label for="name">Nombre</label>
-                                    {!! Form::text('name', null, array('class' => 'form-control')) !!}
-                                </div>
+                               <div class="form-group">
+                                 <label for="titulo">Título</label>
+                                 <input type="text" name="titulo" id="titulo" class="form-control" value="{{ $convocatoria->titulo }}" required>
+                              </div>
                             </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">                      
+                              <div class="form-group">
+                                <label for="descripcion">Descripción</label>
+                                <input name="descripcion" id="descripcion" class="form-control" rows="4" value="{{ $convocatoria->descripcion }}" required>
+                              </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                              <div class="form-group">
+                                <label for="fecha_inicio">Fecha Inicio</label>
+                                <input type="datetime-local" name="fecha_inicio" id="fecha_inicio" class="form-control" value="{{ $convocatoria->fecha_inicio }}" required>
+                              </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                              <div class="form-group">
+                                <label for="fecha_limite">Fecha límite</label>
+                                <input type="datetime-local" name="fecha_limite" id="fecha_limite" class="form-control" value="{{ $convocatoria->fecha_limite }}" required>
+                              </div>
+                            </div>
+
+                            <!-- Para ver la imagen seleccionada, de lo contrario no se -->
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <label for="email">E-mail</label>
-                                    {!! Form::text('email', null, array('class' => 'form-control')) !!}
-                                </div>
+                                   <img src="/imagen/{{ $convocatoria ->imagen }}" width="200px" id="imagenSeleccionada">
                             </div>
-                            <div class="col-xs-4 col-sm-4 col-md-4">
-                                <div class="form-group">
-                                   <label for="">CI </label>
-                                   <input type="number" name="carnet" id="carnet" class="form-control" value="{{ $user->carnet }}">
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-sm-4 col-md-4">
-                                <div class="form-group">
-                                   <label for="">Cargo: </label>
-                                   <input type="text" name="cargo" id="cargo" class="form-control" value="{{ $user->cargo }}">
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-sm-4 col-md-4">
-                                <div class="form-group">
-                                   <label for="">Direccion: </label>
-                                   <input type="text" name="direccion" id="direccion" class="form-control" value="{{ $user->direccion }}">
-                                </div>
-                            </div>
+
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    {!! Form::password('password', array('class' => 'form-control')) !!}
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <label for="confirm-password">Confirmar Password</label>
-                                    {!! Form::password('confirm-password', array('class' => 'form-control')) !!}
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <label for="">Roles</label>
-                                    {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control')) !!}
-                                </div>
-                            </div>
-                            <br></br>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                   <img src="/imagen/{{ $user ->imagen }}" width="200px" id="imagenSeleccionada">
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                            <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold mb-1">Subir Imagen</label>
+                               <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold mb-1">Subir Imagen</label>
                               <div class='flex items-center justify-center w-full'>
-                            <label >
-                            
-                             <input name="imagen" id="imagen" type='file' class="hidden" />
-                            </label>
+                                <label >
+                                    <input name="imagen" id="imagen" type='file' class="hidden" />
+                               </label>
+                              </div>
                             </div>
                             
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                            </div>
+                                <button type="submit" class="btn btn-primary">Guardar</button>                            
+                            
+                           </div>
                         </div>
                         {!! Form::close() !!}
+                    
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+</section>
 <!-- Script para ver la imagen antes de CREAR UN NUEVO PRODUCTO -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
 <script>   
