@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Espacio;
 use App\Models\Cliente;
 use App\Models\Asignacion;
+use App\Models\Convocatoria;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Models\Parqueo;
@@ -45,7 +46,11 @@ class AsignacionController extends Controller
         $espacios = Espacio::where('estado', 'disponible')->get();
         $clientes = Cliente::all();
         // Obtener espacios disponibles
-        return view('asignaciones.create', compact('clientes', 'espacios', 'fechaHoraActual'));
+
+        //Obtener la fecha de la convocataria
+        $convocatoria = Convocatoria::all();
+
+        return view('asignaciones.create', compact('clientes', 'espacios', 'fechaHoraActual', 'convocatoria'));
 
     }
 

@@ -104,6 +104,9 @@ class ConvocatoriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //Eliminar convocatoria
+        $convocatoria = Convocatoria::findOrFail($id);
+        $convocatoria->delete();
+        return redirect()->route('convocatorias.index')->with('success', 'Convocatoria eliminado exitosamente.');
     }
 }
