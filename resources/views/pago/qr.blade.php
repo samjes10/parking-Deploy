@@ -8,17 +8,17 @@
     <input type="file" name="imagen_deposito" id="imagen_deposito" required>
 
     <div class="form-group">
-        <label for="tipo_pago">Tipo de pago:</label>
-        <select class="form-control" name="tipo_pago" id="tipo_pago" required>
+        <label for="tipo_pagoQR">Tipo de pago:</label>
+        <select class="form-control" name="tipo_pagoQR" id="tipo_pagoQR" required>
             <option value="">Seleccionar tipo de pago</option>
             <option value="anual">Pago Anual</option>
             <option value="mensual">Pago Mensual</option>
         </select>
     </div>
 
-    <div class="form-group" id="meses_container" style="display: none;">
+    <div class="form-group" id="meses_containerQR" style="display: none;">
         <label for="meses">Meses a pagar:</label>
-        <div class="col custom-columns">
+        <div class="col custom-columnsQR">
             <div class="row custom-filas">
                 <label><input type="checkbox" name="meses[]" value="enero"> Enero</label><br>
                 <label><input type="checkbox" name="meses[]" value="febrero"> Febrero</label><br>
@@ -50,13 +50,13 @@
 
     <script>
         // Mostrar u ocultar el campo de meses según el tipo de pago seleccionado
-        const tipoPagoSelect = document.getElementById('tipo_pago');
-        const mesesContainer = document.getElementById('meses_container');
+        const tipoPagoSelect = document.getElementById('tipo_pagoQR');
+        const mesesContainer = document.getElementById('meses_containerQR');
 
         tipoPagoSelect.addEventListener('change', function() {
-            const tipoPago = this.value;
+            const tipoPagoQR = this.value;
 
-            if (tipoPago === 'mensual') {
+            if (tipoPagoQR === 'mensual') {
                 mesesContainer.style.display = 'block';
             } else {
                 mesesContainer.style.display = 'none';

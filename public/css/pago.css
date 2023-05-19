@@ -33,13 +33,6 @@ input[type="file"] {
     width: 50%;
 }
 
-.img-qr img{
-    width: 250px;
-    height: 250px;
-    margin-left: 20px;
-}
-
-
 .btn-pago {
   float: right;
   background-color: #1e4cb9;
@@ -49,12 +42,19 @@ input[type="file"] {
   padding: 1% 4%;
 }
 
-.custom-columns {
+/*Estilos de para pago por QR*/
+.img-qr img {
+  width: 250px;
+  height: 250px;
+  margin-left: 20px;
+}
+
+.custom-columnsQR {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 
-.custom-columns label {
+.custom-columnsQR label {
   margin-right: 40px;
 }

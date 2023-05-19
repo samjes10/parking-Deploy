@@ -36,15 +36,15 @@
     </div>
 
     <div class="form-group">
-        <label for="tipo_pago">Tipo de pago:</label>
-        <select class="form-control" name="tipo_pago" id="tipo_pago" required>
+        <label for="tipo_pagoEfec">Tipo de pago:</label>
+        <select class="form-control" name="tipo_pagoEfec" id="tipo_pagoEfec" required>
             <option value="">Seleccionar tipo de pago</option>
             <option value="anual">Pago Anual</option>
             <option value="mensual">Pago Mensual</option>
         </select>
     </div>
 
-    <div class="form-group" id="meses_container" style="display: none;">
+    <div class="form-group" id="meses_containerEfec" style="display: none;">
         <label for="meses">Meses a pagar:</label>
         <div class="col custom-columns">
             <div class="row custom-filas">
@@ -95,8 +95,8 @@
 
 <script>
     // Mostrar u ocultar el campo de meses según el tipo de pago seleccionado
-    const tipoPagoSelect = document.getElementById('tipo_pago');
-    const mesesContainer = document.getElementById('meses_container');
+    const tipoPagoSelect = document.getElementById('tipo_pagoEfec');
+    const mesesContainer = document.getElementById('meses_containerEfec');
 
     tipoPagoSelect.addEventListener('change', function() {
         const tipoPago = this.value;
