@@ -11,7 +11,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="lista-lientes">
+                        <div class=" container lista-clientes">
                             {!! Form::open(array('id' => 'asignacion-form', 'route' => 'asignaciones.store','method'=>'POST')) !!}
                                 @csrf
                                 <div class="col-md-12">

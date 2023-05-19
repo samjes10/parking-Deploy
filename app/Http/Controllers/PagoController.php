@@ -28,7 +28,7 @@ class PagoController extends Controller
         //$fechaLimite = date('Y-m-d', strtotime($asignacion->created_at . ' + ' . $asignacion->dias . ' days'));
         //$diasRetraso = max(0, strtotime(date('Y-m-d')) - strtotime($fechaLimite)) / 86400;
 
-        return view('pago.index', compact('asignaciones', 'clientes'));
+        return view('pago.cobro', compact('asignaciones', 'clientes'));
     }
 
     public function procesar(Request $request)

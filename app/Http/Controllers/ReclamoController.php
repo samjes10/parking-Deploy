@@ -44,8 +44,6 @@ class ReclamoController extends Controller
     {
         // Validar los datos del formulario
         $request->validate([
-            'txtName' => 'required',
-            'txtAsunto' => 'required',
             'txtMsg' => 'required',
         ]);
 
@@ -57,8 +55,7 @@ class ReclamoController extends Controller
         // Crear un nuevo reclamo y asignarle los datos del formulario
         $reclamo = new Reclamo();
         $reclamo->cliente_id = $user->id;
-        $reclamo->nombre_cliente = $request->input('txtName');
-        $reclamo->asunto = $request->input('txtAsunto');
+        $reclamo->nombre_cliente = $user->name;
         $reclamo->mensaje = $request->input('txtMsg');
 
         // Guardar el reclamo en la base de datos

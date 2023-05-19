@@ -12,7 +12,7 @@ class Reclamo extends Model
 
     protected $table = 'reclamos';
 
-    protected $fillable = ['cliente_id', 'asunto', 'descripcion'];
+    protected $fillable = ['cliente_id', 'descripcion'];
 
     public function cliente()
     {

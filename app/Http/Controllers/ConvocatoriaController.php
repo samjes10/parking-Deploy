@@ -17,7 +17,7 @@ class ConvocatoriaController extends Controller
     {
         //Con paginación
         $convocatorias = Convocatoria::paginate(5);
-        return view('convocatorias.index',compact('convocatorias'));
+        return view('convocatorias.index', compact('convocatorias'));
 
         //al usar esta paginacion, recordar poner en el el index.blade.php este codigo  {!! $usuarios->links() !!}
     }
@@ -38,28 +38,28 @@ class ConvocatoriaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    
+
     public function store(Request $request)
     {
         $request->validate([
-            'titulo' => 'required', 
+            'titulo' => 'required',
             'descripcion' => 'required',
-            'fecha_inicio' => 'required|date|after:today', 
+            'fecha_inicio' => 'required|date|after:today',
             'fecha_limite' => 'required|date|after:today',
-            'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024',           
+            'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024',
         ]);
 
-         $convocatoria = $request->all();
+        $convocatoria = $request->all();
 
-         if($imagen = $request->file('imagen')) {
+        if ($imagen = $request->file('imagen')) {
             $rutaGuardarImg = 'imagen/';
-            $imagenParqueo = date('YmdHis'). "." . $imagen->getClientOriginalExtension();
+            $imagenParqueo = date('YmdHis') . "." . $imagen->getClientOriginalExtension();
             $imagen->move($rutaGuardarImg, $imagenParqueo);
-            $convocatoria['imagen'] = "$imagenParqueo";             
-         }
-         
-         Convocatoria::create($convocatoria);
-         return redirect()->route('convocatorias.index');
+            $convocatoria['imagen'] = "$imagenParqueo";
+        }
+
+        Convocatoria::create($convocatoria);
+        return redirect()->route('convocatorias.index');
     }
 
     /**
