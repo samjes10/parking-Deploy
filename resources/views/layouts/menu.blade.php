@@ -26,6 +26,7 @@
         <ul id="usuarioMenu" class="collapse">
             <li class=""><a href="/usuarios/create">Nuevo usuario</a></li>
             <li class=""><a href="/usuarios">Usuarios</a></li>
+            <li class=""><a href="/convocatorias">Convocatorias</a></li>
         </ul>
     </li>
 
@@ -70,9 +71,7 @@
             <li class=""><a href="/reclamos/create">Reclamo</a></li>
         </ul>
     </li>
-    <a class="nav-link" href="/pagos">
-        <i class="fas fa-money-bill"></i><span>Pagos</span>
-    </a>
+    
     
     <!-- <a class="nav-link" href="/blogs">
         <i class="fas fa-blog"></i><span>Blogs</span>
