@@ -47,19 +47,27 @@ class ReclamoController extends Controller
             'txtMsg' => 'required',
         ]);
 
-        //Obtener datos del usuario o cliente auntentificado
-        $user = Auth::user();
-        //$nombre = $user->name;
-        //$email = $user->email;
+        // Verificar si el usuario está autenticado
+        if (Auth::check()) {
+            // Obtener el usuario autenticado
+            $user = Auth::user();
 
-        // Crear un nuevo reclamo y asignarle los datos del formulario
-        $reclamo = new Reclamo();
-        $reclamo->cliente_id = $user->id;
-        $reclamo->nombre_cliente = $user->name;
-        $reclamo->mensaje = $request->input('txtMsg');
+            // Verificar si el objeto $user es válido
+            if ($user) {
+                // Crear un nuevo reclamo y asignarle los datos del formulario
+                $reclamo = new Reclamo();
+                $reclamo->cliente_id = $user->id;
+                $reclamo->mensaje = $request->input('txtMsg');
+                // Guardar el reclamo en la base de datos
+                $reclamo->save();
 
-        // Guardar el reclamo en la base de datos
-        $reclamo->save();
+                // Resto del código...
+            } else {
+                // El objeto $user no es válido, manejar el caso apropiado
+            }
+        } else {
+            // El usuario no está autenticado, manejar el caso apropiado
+        }
 
         /*//Actualizar el historial de reclamos
         $reclamo = new Reclamo::all();

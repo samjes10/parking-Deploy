@@ -22,8 +22,6 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Nombre</th>
-                                    <th>Asunto</th>
                                     <th>Mensaje</th>
                                     <th>Fecha/Hora </th>
                                 </tr>
@@ -31,8 +29,6 @@
                             <tbody>
                                 @foreach ($reclamos as $reclamo)
                                     <tr>
-                                        <td>{{ $reclamo->nombre_cliente }}</td>
-                                        <td>{{ $reclamo->asunto }}</td>
                                         <td>{{ $reclamo->mensaje }}</td>
                                         <td>{{ DateTime::createFromFormat('Y-m-d H:i:s', $reclamo->created_at)->format('d/m/Y H:i') }}</td>
                                     </tr>

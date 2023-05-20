@@ -46,7 +46,7 @@
                                 @if($convocatoria->count() > 0)
                                 <div class="form-group">
                                     {!! Form::label('fecha_limite', 'Fecha límite:', ['class' => 'form-label']) !!}
-                                    {!! Form::text('fecha_limite', $convocatoria->first()->fecha_limite, ['class' => 'form-control', 'readonly', required]) !!}
+                                    {!! Form::text('fecha_limite', $convocatoria->first()->fecha_limite, ['class' => 'form-control', 'readonly', 'required']) !!}
                                     @error('fecha_limite')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
